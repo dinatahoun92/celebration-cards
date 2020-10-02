@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function App() {
+  const [text, setText] = useState("test");
   const canvas = useRef(null);
   CanvasRenderingContext2D.prototype.wrapText = function (
     text,
@@ -34,28 +35,25 @@ function App() {
   };
   useEffect(() => {
     const ctx = canvas.current.getContext("2d");
-    window.onload = () => {
-      let img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src =
-        "https://images.pexels.com/photos/5383948/pexels-photo-5383948.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
-      img.onload = function () {
-        ctx.drawImage(img, 0, 0, 600, 600);
-        ctx.font = "40px Courier";
-        ctx.textAlign = "start";
-        ctx.wrapText("Hello World! adasd vdsfahdsah sgdua", 10, 200, 640, 30);
-      };
+    let img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src =
+      "https://images.pexels.com/photos/5383948/pexels-photo-5383948.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0, 600, 600);
+      ctx.font = "40px Courier";
+      ctx.textAlign = "start";
+      ctx.wrapText(text, 10, 200, 640, 30);
     };
   });
 
   return (
     <div>
       <canvas ref={canvas} width={640} height={425} />
-      {/* <img
-        ref={image}
-        src="https://img.freepik.com/free-photo/jasmine-flower-greenery_34266-955.jpg?size=626&ext=jpg"
-      /> */}
-      <img src={canvas.current ? canvas.current.toDataURL() : ""} />
+      <textarea
+        value={text}
+        onChange={(event) => setText(event.target.value)}
+      />
     </div>
   );
 }
