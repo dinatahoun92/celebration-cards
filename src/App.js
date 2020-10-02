@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import img0 from "./imgs/0.jpeg";
 import img1 from "./imgs/1.jpg";
 import img2 from "./imgs/2.jpg";
 import img3 from "./imgs/3.jpg";
@@ -8,7 +9,9 @@ import img6 from "./imgs/6.webp";
 import download from "./imgs/download.png";
 import "./App.css";
 function App() {
-  const [text, setText] = useState("test");
+  const [text, setText] = useState("Replace this text!");
+  const [image, setImage] = useState(img0);
+  const [color, setColor] = useState("#f2ceaf");
   const canvas = useRef(null);
   CanvasRenderingContext2D.prototype.wrapText = function (
     text,
@@ -44,13 +47,13 @@ function App() {
     const ctx = canvas.current.getContext("2d");
     let img = new Image();
     img.crossOrigin = "anonymous";
-    img.src =
-      "https://images.pexels.com/photos/5383948/pexels-photo-5383948.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+    img.src = image;
     img.onload = function () {
       ctx.drawImage(img, 0, 0, 600, 600);
-      ctx.font = "40px Courier";
+      ctx.font = "40px Yesteryear";
+      ctx.fillStyle = color;
       ctx.textAlign = "start";
-      ctx.wrapText(text, 10, 200, 500, 30);
+      ctx.wrapText(text, 10, 200, 500, 40);
     };
   });
 
@@ -61,12 +64,12 @@ function App() {
         <div className="sidebar">
           <h4>choose an image</h4>
           <div className="imgs">
-            <img src={img1}></img>
-            <img src={img2}></img>
-            <img src={img3}></img>
-            <img src={img4}></img>
-            <img src={img5}></img>
-            <img src={img6}></img>
+            <img src={img1} onClick={() => setImage(img1)}></img>
+            <img src={img2} onClick={() => setImage(img2)}></img>
+            <img src={img3} onClick={() => setImage(img3)}></img>
+            <img src={img4} onClick={() => setImage(img4)}></img>
+            <img src={img5} onClick={() => setImage(img5)}></img>
+            <img src={img6} onClick={() => setImage(img6)}></img>
           </div>
         </div>
         <div className="main">
@@ -79,7 +82,11 @@ function App() {
           />
           <div className="colorPicker">
             <label>Change font color: </label>
-            <input type="color" id="favcolor" name="favcolor" value="#ff0000" />
+            <input
+              type="color"
+              value={color}
+              onChange={(event) => setColor(event.target.value)}
+            />
           </div>
         </div>
       </div>
