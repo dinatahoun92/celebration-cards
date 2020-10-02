@@ -38,11 +38,13 @@ function App() {
       let img = new Image();
       img.crossOrigin = "anonymous";
       img.src =
-        "https://img.freepik.com/free-photo/jasmine-flower-greenery_34266-955.jpg?size=626&ext=jpg";
-      ctx.drawImage(img, 0, 0, 600, 600);
-      ctx.font = "40px Courier";
-      ctx.textAlign = "start";
-      ctx.wrapText("Hello World! adasd vdsfahdsah sgdua", 60, 20, 640, 30);
+        "https://images.pexels.com/photos/5383948/pexels-photo-5383948.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0, 600, 600);
+        ctx.font = "40px Courier";
+        ctx.textAlign = "start";
+        ctx.wrapText("Hello World! adasd vdsfahdsah sgdua", 10, 200, 640, 30);
+      };
     };
   });
 
