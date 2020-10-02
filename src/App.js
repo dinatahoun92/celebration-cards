@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import img1 from "./imgs/1.jpg";
+import img2 from "./imgs/2.jpg";
+import img3 from "./imgs/3.jpg";
+import img4 from "./imgs/4.jpg";
+import img5 from "./imgs/5.jpeg";
+import img6 from "./imgs/6.webp";
+import download from "./imgs/download.png";
+import "./App.css";
 function App() {
   const [text, setText] = useState("test");
   const canvas = useRef(null);
@@ -43,17 +50,39 @@ function App() {
       ctx.drawImage(img, 0, 0, 600, 600);
       ctx.font = "40px Courier";
       ctx.textAlign = "start";
-      ctx.wrapText(text, 10, 200, 640, 30);
+      ctx.wrapText(text, 10, 200, 500, 30);
     };
   });
 
   return (
-    <div>
-      <canvas ref={canvas} width={640} height={425} />
-      <textarea
-        value={text}
-        onChange={(event) => setText(event.target.value)}
-      />
+    <div class="home">
+      <img src={download} className="downloadIcon" />
+      <div className="container">
+        <div className="sidebar">
+          <h4>choose an image</h4>
+          <div className="imgs">
+            <img src={img1}></img>
+            <img src={img2}></img>
+            <img src={img3}></img>
+            <img src={img4}></img>
+            <img src={img5}></img>
+            <img src={img6}></img>
+          </div>
+        </div>
+        <div className="main">
+          <h1>greeting card maker</h1>
+
+          <canvas ref={canvas} width={640} height={425} />
+          <textarea
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+          />
+          <div className="colorPicker">
+            <label>Change font color: </label>
+            <input type="color" id="favcolor" name="favcolor" value="#ff0000" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
