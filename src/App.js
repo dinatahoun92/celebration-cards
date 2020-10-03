@@ -12,6 +12,7 @@ function App() {
   const [text, setText] = useState("Replace this text!");
   const [image, setImage] = useState(img0);
   const [color, setColor] = useState("#f2ceaf");
+  const [downloadLink, setDownload] = useState("");
   const canvas = useRef(null);
   CanvasRenderingContext2D.prototype.wrapText = function (
     text,
@@ -54,12 +55,15 @@ function App() {
       ctx.fillStyle = color;
       ctx.textAlign = "start";
       ctx.wrapText(text, 10, 200, 500, 40);
+      setDownload(canvas.current.toDataURL());
     };
   });
 
   return (
     <div class="home">
-      <img src={download} className="downloadIcon" />
+      <a href={downloadLink} download>
+        <img src={download} className="downloadIcon" />
+      </a>
       <div className="container">
         <div className="sidebar">
           <h4>choose an image</h4>
