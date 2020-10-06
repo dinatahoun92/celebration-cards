@@ -2,11 +2,11 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f2ceaf;
-  font-family: "Lalezar", cursive !important;
-  text-align: right;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
+  font-family: "Yesteryear", cursive;
   font-size: 40px;
   text-align: center;
   text-transform: capitalize;
@@ -28,7 +28,6 @@ h1 {
   text-transform: uppercase;
   color: #f2ceaf;
   letter-spacing: 1px;
-  font-size: 30px;
 }
 .sidebar img {
   width: 100%;
@@ -47,7 +46,6 @@ textarea {
   width: 640px;
   height: 100px;
   margin-top: 30px;
-  text-align: right;
 }
 .colorPicker {
   margin-top: 30px;
