@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CardMakerArabic from "./arabic/cardmaker arabic";
-import CardMakerEnglish from "./english/cardmaker english";
+import CardMakerArabic from "./arabic/cardmaker arabic"; // Needed if you follow the Arabic tutorial
+import CardMakerEnglish from "./english/cardmaker english"; // Needed if you are following the English tutorial
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"; //ignore that you woun't need routing in the tutorial
 
