@@ -39,7 +39,7 @@ npm start
 
 ## Step 2 - Build basic markup:
 1. Go to `app.js` file. 
-2. Choose any number of images to use as background image for our greeting card. I selected 7 images from [Pexels.com](https://www.pexels.com/).
+2. Choose any number of images to use as background image for our greeting card. I selected 7 images from [Pexels.com](https://www.pexels.com/).I placed all of images in anew folder called `imgs`.
 3. Choose a download icon. You can use font icon or image. I used an image from pixabay. You can download it from [here](https://pixabay.com/illustrations/download-download-now-download-icon-1915749/).
 4. We will need to make a sidebar with images users can choose from, color picker so that the user can change font color,textarea where the user can type the greeting message,download button, and canvas where we make our greeting card.
 
@@ -76,7 +76,6 @@ function App() {
         </div>
         <div className="main">
           <h1>greeting card maker</h1>
-
           <canvas  width={640} height={425} />
           <textarea/>
           <div className="colorPicker">
@@ -92,3 +91,129 @@ function App() {
 
 export default App;
 ```
+## Step3 - Style the app:
+
+As we are not going to focus on styling. I will provide the CSS code. however, I encourge you to experiment and style it yourself.
+
+**Replace styles in App.js with the following CSS code:**
+
+```
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f2ceaf;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-family: "Yesteryear", cursive;
+  font-size: 40px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #3e424e;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+.sidebar {
+  width: 20%;
+  text-align: center;
+  background-color: #3e424e;
+  height: 100%;
+}
+.sidebar h4 {
+  text-transform: uppercase;
+  color: #f2ceaf;
+  letter-spacing: 1px;
+}
+.sidebar img {
+  width: 100%;
+  object-fit: contain;
+  letter-spacing: 1px;
+}
+.main {
+  width: 75%;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: auto;
+}
+textarea {
+  width: 640px;
+  height: 100px;
+  margin-top: 30px;
+}
+.colorPicker {
+  margin-top: 30px;
+}
+.colorPicker label {
+  font-weight: 600;
+}
+.downloadIcon {
+  position: fixed;
+  top: 100px;
+  right: 50px;
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  cursor: pointer;
+}
+```
+
+ I'm using [Google fonts](https://fonts.google.com/) to use it I embeded it in `public/index.html` file.
+
+ If you are going to use the styles that I provided and you will use the same fonts. Place the following line in the head tag in `public/index/html`.
+
+ ```
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Pacifico&family=Secular+One&family=Yesteryear&display=swap&"
+    rel="stylesheet"/>
+```
+
+## Step 4 - Canvas API to draw image:
+
+1. Back in App.js file. We will creatث `Ref` in Canvas tag to access the DOM node. We will call it `canvas`.
+```
+const canvas = useRef(null);
+```
+Then we will add `ref` object.  React will set its .current property to the corresponding DOM node whenever that node changes.
+   
+```
+<canvas ref={canvas} width={640} height={425} />
+```
+2. As we are manipulating DOM directly, we will need to use `useEffect()` because, You cannot perform side-effects directly in the body of the functional component.
+
+3. The `canvas.current.getContext()` method rendes image into the element`s context.
+
+4. Create new img element.
+
+```
+let img = new Image();
+```
+
+5- We will use `img.onload` function to wait for our image to be loaded before the backdrop is placed in coordinate (0,0) and whose width and height are 600px and 600px.
+```
+img.onload = function () {
+  ctx.drawImage(img, 0, 0, 600, 600);
+};
+```
+ **Here is the whole code of drawing an image with Canvas API.**
+
+ ```
+ useEffect(() => {
+    const ctx = canvas.current.getContext("2d");
+    let img = new Image();
+    img.src = img0;
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0, 600, 600);
+    };
+  });
+  ```
+  
+   
+
+
