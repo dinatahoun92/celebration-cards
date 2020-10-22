@@ -26,6 +26,8 @@ We will use [Create React App](https://github.com/facebook/create-react-app) as 
 ```
 npx create-react-app greeting-card
 ```
+*This will install the latest react version.All React packages should be **16.8.0** or higher to support **React Hooks**.*
+
 2. We Will navigate into our newly created greeting-card folder, using the following command:
 ```
 cd greeting-card
@@ -201,7 +203,7 @@ img.onload = function () {
   ctx.drawImage(img, 0, 0, 600, 600);
 };
 ```
- **Here is the whole code of drawing an image with Canvas API.**
+ **Here is the whole code of drawing an image with Canvas API:**
 
  ```
  useEffect(() => {
@@ -213,7 +215,76 @@ img.onload = function () {
     };
   });
   ```
-  
+## Step 5 - Canvas API to draw text :
+
+1. We will use `fillText()` method to draw the text "Hello world," starting at the coordinates (100, 200) inside `useEffect` as we are still manipulating the DOM.
    
+ ```
+ctx.fillText('Hello world', 100, 200);
+ ```
+*You will notice that the text didn't render, that is because we are rendering the text without waiting for the image to be drawn first. To solve that we will put it inside `img.onload` function.*
+
+2. We will style our text. 
+  - We will use `ctx.font` to set font to **40px** and font family to **Yesteryear**.
+
+```
+ctx.font = "40px Yesteryear";
+```
+
+  - We will change font color to `"#f2ceaf"` using `ctx.fillStyle`.
+  
+```
+ctx.fillStyle = "#f2ceaf";
+```
+   
+*Note: Any styling we do we must put it before `ctx.fillText` because the text gets drawn based on it's previous styles.*
+
+3- If you replace 'Hello world' with long sentense, you will notice that the text is overflowing instead of wrapping. This is a problem with Canvas API. To work arround this we will make a function that takes the text calculate it's width and breaks into a new line when needed. *The following code is inspired by Colin Wiseman answer on this stackoverflow [question](https://stackoverflow.com/questions/5026961/html5-canvas-ctx-filltext-wont-do-line-breaks/11361958#11361958).*
+
+```
+CanvasRenderingContext2D.prototype.wrapText = function (
+    text,
+    x,
+    y,
+    maxWidth,
+    lineHeight
+  ) {
+    var lines = text.split("\n");
+
+    for (var i = 0; i < lines.length; i++) {
+      var words = lines[i].split(" ");
+      var line = "";
+
+      for (var n = 0; n < words.length; n++) {
+        var testLine = line + words[n] + " ";
+        var metrics = this.measureText(testLine);
+        var testWidth = metrics.width;
+        if (testWidth > maxWidth && n > 0) {
+          this.fillText(line, x, y);
+          line = words[n] + " ";
+          y += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+
+      this.fillText(line, x, y);
+      y += lineHeight;
+    }
+  };
+  ```
+- `CanvasRenderingContext2D` provides the 2D rendering context for the drawing surface of a canvas element. It takes **text, x&Y coordinates, maximum width of each sentence , and line length**.
+- We will remove the following line:
+
+```
+ctx.fillText('Hello world', 100, 200);
+```
+*As it is used on the above function*
+
+- We replace it with:
+```
+ctx.wrapText("Hello world", 10, 200, 500, 40);
+```
+
 
 
