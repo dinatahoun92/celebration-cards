@@ -309,20 +309,34 @@ Then, we will add a click event listner that triggers `setImage` to change card'
 ```
 ## Step 6 - Update text:
 
-Like we did in the image we will use `useState` to set `text` state variable to `"Replace this text!"`.
+1. Like we did in the image we will use `useState` to set `text` state variable to `"Replace this text!"`.
 ```
 const [text, setText] = useState("Replace this text!");
 ```
-Then, we will remove static `"Hello world!"` text and replace it with `text` state variable.
+2. We will remove static `"Hello world!"` text and replace it with `text` state variable.
 ```
 ctx.wrapText(text, 10, 200, 500, 40);
 ```
-Finally, We will call `setText` when the user types on the `textarea`. So, We will triger it `OnChange` event. We will also set the value of the `textarea` to the `text` state variable.
+3. We will call `setText` when the user types on the `textarea`. So, We will triger it `OnChange` event. We will also set the value of the `textarea` to the `text` state variable.
 
 ```
 <textarea value={text} onChange={(event) => setText(event.target.value)}/>
 ```
 
+## Step 7 - Update font color:
+
+1. We will use `useState` to set `color` state variable to `"#f2ceaf"`.
+  
+```
+const [color, setColor] = useState("#f2ceaf");
+```
+1. We will add `value` property and make it equal to `color` state variable.
+   
+2. We will call `setColor` when the user types on the `input`. So, We will triger it `OnChange` event.
+   
+```
+<input type="color" value={color} onChange={(event) => setColor(event.target.value)}/>
+```
 
 
 
