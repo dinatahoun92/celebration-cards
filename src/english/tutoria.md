@@ -274,6 +274,7 @@ CanvasRenderingContext2D.prototype.wrapText = function (
   };
   ```
 - `CanvasRenderingContext2D` provides the 2D rendering context for the drawing surface of a canvas element. It takes **text, x&Y coordinates, maximum width of each sentence , and line length**.
+  
 - We will remove the following line:
 
 ```
@@ -285,6 +286,44 @@ ctx.fillText('Hello world', 100, 200);
 ```
 ctx.wrapText("Hello world", 10, 200, 500, 40);
 ```
+
+## Step 6 - Update Image:
+
+Let’s add the functionality to Make user able to change the card's image when he clicks on any image from the left side images.
+We will declare a **state variable** called `image`, and set it to `img0`. React will remember its current value between re-renders, and provide the most recent one to our function. If we want to update the current `image`, we can call `setImage`.
+```
+const [image, setImage] = useState(img0);
+```
+So, We will remove the static `img0` and replace it with `image` state variable. Like the following:
+```
+img.src = image;
+```
+Then, we will add a click event listner that triggers `setImage` to change card's image `onClick`.
+```
+<img src={img1} onClick={() => setImage(img1)}></img>
+<img src={img2} onClick={() => setImage(img2)}></img>
+<img src={img3} onClick={() => setImage(img3)}></img>
+<img src={img4} onClick={() => setImage(img4)}></img>
+<img src={img5} onClick={() => setImage(img5)}></img>
+<img src={img6} onClick={() => setImage(img6)}></img>
+```
+## Step 6 - Update text:
+
+Like we did in the image we will use `useState` to set `text` state variable to `"Replace this text!"`.
+```
+const [text, setText] = useState("Replace this text!");
+```
+Then, we will remove static `"Hello world!"` text and replace it with `text` state variable.
+```
+ctx.wrapText(text, 10, 200, 500, 40);
+```
+Finally, We will call `setText` when the user types on the `textarea`. So, We will triger it `OnChange` event. We will also set the value of the `textarea` to the `text` state variable.
+
+```
+<textarea value={text} onChange={(event) => setText(event.target.value)}/>
+```
+
+
 
 
 
