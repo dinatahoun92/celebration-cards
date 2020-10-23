@@ -330,10 +330,13 @@ ctx.wrapText(text, 10, 200, 500, 40);
 ```
 const [color, setColor] = useState("#f2ceaf");
 ```
-1. We will add `value` property and make it equal to `color` state variable.
+1. We will remove static `"#f2ceaf"` text and replace it with `color` state variable.
+
+```
+ctx.fillStyle = color;
+```
    
 2. We will call `setColor` when the user types on the `input`. So, We will triger it `OnChange` event.
-   
 ```
 <input type="color" value={color} onChange={(event) => setColor(event.target.value)}/>
 ```
