@@ -49,7 +49,7 @@ cd greeting-card
 ```
 </div>
 
-1. Write the following to run the greeting-card project in development mode:
+3. قم بتنفيذ الأمر الأتي لكي تقوم بتشغيل بيئة التطوير 
 
 <div dir="ltr">
 
@@ -58,7 +58,8 @@ npm start
 ```
 
 </div>
-4. Open [localhost:3000](localhost:3000) to view it in the browser. 
+
+4. قم بفتح الرابط الأتي في المتصفح [localhost:3000](localhost:3000).
 
 ## Step 2 - Build basic markup:
 1. Go to `app.js` file. 
