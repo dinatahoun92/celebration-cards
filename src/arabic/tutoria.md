@@ -61,13 +61,19 @@ npm start
 
 4. قم بفتح الرابط الأتي في المتصفح [localhost:3000](localhost:3000).
 
-## Step 2 - Build basic markup:
-1. Go to `app.js` file. 
-2. Choose any number of images to use as background image for our greeting card. I selected 7 images from [Pexels.com](https://www.pexels.com/).I placed all of images in anew folder called `imgs`.
-3. Choose a download icon. You can use font icon or image. I used an image from pixabay. You can download it from [here](https://pixabay.com/illustrations/download-download-now-download-icon-1915749/).
-4. We will need to make a sidebar with images users can choose from, color picker so that the user can change font color,textarea where the user can type the greeting message,download button, and canvas where we make our greeting card.
+## الخطوة 2 - انشاء الهيكل الاساسي:
 
-**Here is the starter code:**
+1. أذهب الي ملف `app.js` . 
+2. أختاراي مجموعة من الصور لكي نستخدمها كخلفيه لكارت المعايدات. أنا اخترت 7 صور من [Pexels.com](https://www.pexels.com/).ووضعت الصور في ملف جديد الذي سميته `imgs`.
+3. أختار صورة تنزيل المرفقات  . لقد قمت بأختيار صورة من موقع pixabay. يمكنك تنزيلها من [هنا](https://pixabay.com/illustrations/download-download-now-download-icon-1915749/).
+4. سوف نقوم بعمل الاتي:
+    - شريط جانبي يحتوي الصور الذي سوف يختار منها المستخدم.
+    - color picker 
+    - textarea
+    - زرار التنزيل
+    - canvas
+
+**كود البدء:**
 <div dir="ltr">
 
 ```
@@ -83,16 +89,16 @@ import download from "./imgs/download.png";
 import "./App.css";
 function App() {
   
+
   return (
     <div class="home">
-      <a download>
+      <a>
         <img src={download} className="downloadIcon" />
       </a>
       <div className="container">
         <div className="sidebar">
-          <h4>choose an image</h4>
+          <h4>أختر صورة </h4>
           <div className="imgs">
-            <img src={img1}></img>
             <img src={img2}></img>
             <img src={img3}></img>
             <img src={img4}></img>
@@ -101,13 +107,16 @@ function App() {
           </div>
         </div>
         <div className="main">
-          <h1>greeting card maker</h1>
-          <canvas  width={640} height={425} />
-          <textarea/>
+          <h1>كارت المعايدات</h1>
+
+          <canvas width={640} height={425} />
+          <textare
+          />
           <div className="colorPicker">
-            <label>Change font color: </label>
             <input
-              type="color"/>
+              type="color"
+            />
+            <label> : اختر الللون </label>
           </div>
         </div>
       </div>
@@ -116,6 +125,7 @@ function App() {
 }
 
 export default App;
+
 ```
 
 </div>
