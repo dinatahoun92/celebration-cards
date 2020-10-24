@@ -130,11 +130,12 @@ export default App;
 
 </div>
 
-## Step3 - Style the app:
+## خطوة 3 - التنسيق :
 
-As we are not going to focus on styling. I will provide the CSS code. however, I encourge you to experiment and style it yourself.
+بما اننا في هذا الدرس لن يكون التركيز على التنسيق سأقوم بامدادكم بالأكواد. و لكني اشجعكم على  التجربه و تنسيقه بنفسكم. 
 
-**Replace styles in App.js with the following CSS code:**
+
+**قم باستبدال التنسيقات الموجودة في ملف App.css بالأكواد الأتية:**
 
 <div dir="ltr">
 
@@ -143,11 +144,11 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f2ceaf;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lalezar", cursive !important;
+  text-align: right;
 }
 
 h1 {
-  font-family: "Yesteryear", cursive;
   font-size: 40px;
   text-align: center;
   text-transform: capitalize;
@@ -169,6 +170,7 @@ h1 {
   text-transform: uppercase;
   color: #f2ceaf;
   letter-spacing: 1px;
+  font-size: 30px;
 }
 .sidebar img {
   width: 100%;
@@ -187,6 +189,7 @@ textarea {
   width: 640px;
   height: 100px;
   margin-top: 30px;
+  text-align: right;
 }
 .colorPicker {
   margin-top: 30px;
@@ -206,16 +209,13 @@ textarea {
 ```
 </div>
 
- I'm using [Google fonts](https://fonts.google.com/) to use it I embeded it in `public/index.html` file.
+انا مستخدمة   [خطوط جوجل](https://fonts.google.com/) لكي يتم استدعائها  قم بوضع الكود الأتي في ملف  `public/index.html`.
 
- If you are going to use the styles that I provided and you will use the same fonts. Place the following line in the head tag in `public/index/html`.
 
 <div dir="ltr">
 
  ```
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Pacifico&family=Secular+One&family=Yesteryear&display=swap&"
-    rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
 ```
 </div>
 
