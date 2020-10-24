@@ -7,7 +7,7 @@ import img4 from "./imgs/4.jpg";
 import img5 from "./imgs/5.jpeg";
 import img6 from "./imgs/6.webp";
 import download from "./imgs/download.png";
-import "./style.css";
+import "./App.css";
 function CardMakerEnglish() {
   const [text, setText] = useState("Replace this text!");
   const [image, setImage] = useState(img0);
@@ -47,7 +47,6 @@ function CardMakerEnglish() {
   useEffect(() => {
     const ctx = canvas.current.getContext("2d");
     let img = new Image();
-    img.crossOrigin = "anonymous";
     img.src = image;
     img.onload = function () {
       ctx.drawImage(img, 0, 0, 600, 600);

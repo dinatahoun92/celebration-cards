@@ -7,7 +7,7 @@ import img4 from "./imgs/4.jpg";
 import img5 from "./imgs/5.jpeg";
 import img6 from "./imgs/6.webp";
 import download from "./imgs/download.png";
-import "./style.css";
+import "./App.css";
 function CardMakerArabic() {
   const [text, setText] = useState("استبدل هذا النص!");
   const [image, setImage] = useState(img1);
@@ -47,7 +47,6 @@ function CardMakerArabic() {
   useEffect(() => {
     const ctx = canvas.current.getContext("2d");
     let img = new Image();
-    img.crossOrigin = "anonymous";
     img.src = image;
     img.onload = function () {
       ctx.drawImage(img, 0, 0, 600, 600);

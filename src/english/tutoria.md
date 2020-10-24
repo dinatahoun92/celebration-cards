@@ -355,7 +355,7 @@ const [downloadLink, setDownload] = useState("");
 ```
 <a href={downloadLink} download>
 ```
-## Finally,Your App.js code should look like the following:
+## Finally, Your App.js code should look like the following:
 ```
 import React, { useEffect, useRef, useState } from "react";
 import img0 from "./imgs/0.jpeg";
