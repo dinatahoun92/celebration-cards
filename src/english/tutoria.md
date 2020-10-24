@@ -8,8 +8,8 @@ In this tutorial we will be craeting a greeting card maker. It will enable users
 - Using Effect Hook.
 - Using State Hook.
 - Refs.
-- Handling OnChange event. 
-- Working with Context API with React.js.
+- Handling OnChange and OnClick events. 
+- Working with Canvas API with React.js.
 
 ## Prerequisites:
 
@@ -330,17 +330,135 @@ ctx.wrapText(text, 10, 200, 500, 40);
 ```
 const [color, setColor] = useState("#f2ceaf");
 ```
-1. We will remove static `"#f2ceaf"` text and replace it with `color` state variable.
+2. We will remove static `"#f2ceaf"` text and replace it with `color` state variable.
 
 ```
 ctx.fillStyle = color;
 ```
    
-2. We will call `setColor` when the user types on the `input`. So, We will triger it `OnChange` event.
+3. We will call `setColor` when the user types on the `input`. So, We will triger it `OnChange` event.
 ```
 <input type="color" value={color} onChange={(event) => setColor(event.target.value)}/>
 ```
+## Step 8 - Add functionlity to the download button:
 
+We want when the user clicks on the download button, be able to save the card as an image. Let's start building that functionlity. 
+1.  We will grab the contents of an HTML5 canvas using the canvas `toDataURL()` function.The data returned from the toDataURL() function is a string that represents an encoded URL containing the grabbed graphical data. 
+```
+canvas.current.toDataURL()
+```
+2. We will save it in `downloadLink` state variable with intial value of `""` as before canvas renders we don`t want to save any link.
+```
+const [downloadLink, setDownload] = useState("");
+```
+3. To be able to make the download button downloading the image, We will put `download` attribute and set `href` attribute value to `downloadLink` state value.
+```
+<a href={downloadLink} download>
+```
+## Finally,Your App.js code should look like the following:
+```
+import React, { useEffect, useRef, useState } from "react";
+import img0 from "./imgs/0.jpeg";
+import img1 from "./imgs/1.jpg";
+import img2 from "./imgs/2.jpg";
+import img3 from "./imgs/3.jpg";
+import img4 from "./imgs/4.jpg";
+import img5 from "./imgs/5.jpeg";
+import img6 from "./imgs/6.webp";
+import download from "./imgs/download.png";
+import "./App.css";
+function App() {
+  const canvas = useRef(null);
+  const [image, setImage] = useState(img0);
+  const [text, setText] = useState("Replace this text!");
+  const [color, setColor] = useState("#f2ceaf");
+  const [downloadLink, setDownload] = useState("");
 
+  CanvasRenderingContext2D.prototype.wrapText = function (
+    text,
+    x,
+    y,
+    maxWidth,
+    lineHeight
+  ) {
+    var lines = text.split("\n");
+
+    for (var i = 0; i < lines.length; i++) {
+      var words = lines[i].split(" ");
+      var line = "";
+
+      for (var n = 0; n < words.length; n++) {
+        var testLine = line + words[n] + " ";
+        var metrics = this.measureText(testLine);
+        var testWidth = metrics.width;
+        if (testWidth > maxWidth && n > 0) {
+          this.fillText(line, x, y);
+          line = words[n] + " ";
+          y += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+
+      this.fillText(line, x, y);
+      y += lineHeight;
+    }
+  };
+  useEffect(() => {
+    const ctx = canvas.current.getContext("2d");
+    let img = new Image();
+    img.src = image;
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0, 600, 600);
+      ctx.font = "40px Yesteryear";
+      ctx.fillStyle = color;
+      ctx.wrapText(text, 10, 200, 500, 40);
+      setDownload(canvas.current.toDataURL());
+
+    };
+   
+
+  });
+  return (
+    <div className="home">
+      <a href={downloadLink} download>
+        <img src={download} className="downloadIcon" />
+      </a>
+      <div className="container">
+        <div className="sidebar">
+          <h4>choose an image</h4>
+          <div className="imgs">
+          <img src={img1} onClick={() => setImage(img1)}></img>
+            <img src={img2} onClick={() => setImage(img2)}></img>
+            <img src={img3} onClick={() => setImage(img3)}></img>
+            <img src={img4} onClick={() => setImage(img4)}></img>
+            <img src={img5} onClick={() => setImage(img5)}></img>
+            <img src={img6} onClick={() => setImage(img6)}></img>
+          </div>
+        </div>
+        <div className="main">
+          <h1>greeting card maker</h1>
+
+          <canvas ref={canvas} width={640} height={425} />
+          <textarea
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+          />
+          <div className="colorPicker">
+            <label>Change font color: </label>
+            <input
+              type="color"
+              value={color}
+              onChange={(event) => setColor(event.target.value)}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
 
 
