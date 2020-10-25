@@ -472,5 +472,5 @@ export default App;
  If you like you can download the source code from this [link](https://github.com/dinatahoun92/celebration-cards/tree/english)
 
 ## License:
-The source code and the tutorial is licensed under the MIT license, which you can find in the MIT-LICENSE.txt file.
+The source code and the tutorial are licensed under the MIT license, which you can find in the MIT-LICENSE.txt file.
 
