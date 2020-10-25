@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/celebration-cards/static/css/main.2179db33.chunk.css",
+    "main.js": "/celebration-cards/static/js/main.40c0e4e8.chunk.js",
+    "main.js.map": "/celebration-cards/static/js/main.40c0e4e8.chunk.js.map",
+    "runtime-main.js": "/celebration-cards/static/js/runtime-main.d560c6cf.js",
+    "runtime-main.js.map": "/celebration-cards/static/js/runtime-main.d560c6cf.js.map",
+    "static/js/2.214e9523.chunk.js": "/celebration-cards/static/js/2.214e9523.chunk.js",
+    "static/js/2.214e9523.chunk.js.map": "/celebration-cards/static/js/2.214e9523.chunk.js.map",
+    "index.html": "/celebration-cards/index.html",
+    "precache-manifest.c0e9d680c4ca29c00f927eec4dc9b96c.js": "/celebration-cards/precache-manifest.c0e9d680c4ca29c00f927eec4dc9b96c.js",
+    "service-worker.js": "/celebration-cards/service-worker.js",
+    "static/css/main.2179db33.chunk.css.map": "/celebration-cards/static/css/main.2179db33.chunk.css.map",
+    "static/js/2.214e9523.chunk.js.LICENSE.txt": "/celebration-cards/static/js/2.214e9523.chunk.js.LICENSE.txt",
+    "static/media/0.jpeg": "/celebration-cards/static/media/0.599ca5ba.jpeg",
+    "static/media/1.jpg": "/celebration-cards/static/media/1.ad0b3661.jpg",
+    "static/media/2.jpg": "/celebration-cards/static/media/2.10c8c713.jpg",
+    "static/media/3.jpg": "/celebration-cards/static/media/3.08880df2.jpg",
+    "static/media/5.jpeg": "/celebration-cards/static/media/5.2bb3febc.jpeg",
+    "static/media/6.webp": "/celebration-cards/static/media/6.0e88b11a.webp",
+    "static/media/download.png": "/celebration-cards/static/media/download.d1f4d5de.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d560c6cf.js",
+    "static/js/2.214e9523.chunk.js",
+    "static/css/main.2179db33.chunk.css",
+    "static/js/main.40c0e4e8.chunk.js"
+  ]
+}
