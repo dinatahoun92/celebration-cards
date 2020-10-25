@@ -434,17 +434,43 @@ img.src = image;
 ```
 </div>
 
-## Step 6 - Update text:
 
-1. Like we did in the image we will use `useState` to set `text` state variable to `"Replace this text!"`.
+## خطوة 7 - تحديث النص:
+1. مثل ما عملنا في تحديث الصورة سنقوم بأستخدام 
+`useState`
+لكي ننشأ متغير حالة اسمه`text` 
+و نساوية يالآتي 
+`"استبدل هذا النص!"`.
+
+<div dir="ltr">
+
 ```
-const [text, setText] = useState("Replace this text!");
+const [text, setText] = useState("استبدل هذا النص!");
+
 ```
-2. We will remove static `"Hello world!"` text and replace it with `text` state variable.
+</div>
+
+2. سنستبدل القيمة الثابته
+"أهلاً بالعالم" بمتغير الحالة
+ `text`.
+
+<div dir="ltr">
+
 ```
 ctx.wrapText(text, 10, 200, 500, 40);
 ```
-3. We will call `setText` when the user types on the `textarea`. So, We will triger it `OnChange` event. We will also set the value of the `textarea` to the `text` state variable.
+</div>
+
+3. سوف نقوم بأستدعاء الدالة
+`setText` 
+عندما يقوم المستخدم بالكتابة في
+ `textarea`.
+ عندها ستطلق الحالة
+  `OnChange` .
+عندها سنقوم بجعل قيمة 
+ `textarea`
+ تساوي قيمة متغير الحالة
+ `text`.
    
 <div dir="ltr">
 
