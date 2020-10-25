@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ffd8f67b4eb55bb1721e7e37a016728d",
+    "revision": "d2052eca8168e179fe93d18400a160c1",
     "url": "/celebration-cards/index.html"
   },
   {
-    "revision": "f3e082d6d04adf02efe5",
+    "revision": "2e817ca4582dea4f0e6a",
     "url": "/celebration-cards/static/css/main.2179db33.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/celebration-cards/static/js/2.41ed838d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f3e082d6d04adf02efe5",
-    "url": "/celebration-cards/static/js/main.f5bd29ec.chunk.js"
+    "revision": "2e817ca4582dea4f0e6a",
+    "url": "/celebration-cards/static/js/main.10fe86b9.chunk.js"
   },
   {
     "revision": "88d15b6afb90e6ead154",
