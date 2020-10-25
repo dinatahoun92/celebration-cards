@@ -8,9 +8,9 @@ import img5 from "./imgs/5.jpeg";
 import img6 from "./imgs/6.webp";
 import download from "./imgs/download.png";
 import "./App.css";
-function CardMakerArabic() {
-  const [text, setText] = useState("استبدل هذا النص!");
-  const [image, setImage] = useState(img1);
+function App() {
+  const [text, setText] = useState("Replace this text!");
+  const [image, setImage] = useState(img0);
   const [color, setColor] = useState("#f2ceaf");
   const [downloadLink, setDownload] = useState("");
   const canvas = useRef(null);
@@ -50,10 +50,10 @@ function CardMakerArabic() {
     img.src = image;
     img.onload = function () {
       ctx.drawImage(img, 0, 0, 600, 600);
-      ctx.font = "40px Lalezar";
+      ctx.font = "40px Yesteryear";
       ctx.fillStyle = color;
-      ctx.textAlign = "left";
-      ctx.wrapText(text, 10, 200, 640, 40);
+      ctx.textAlign = "start";
+      ctx.wrapText(text, 10, 200, 500, 40);
       setDownload(canvas.current.toDataURL());
     };
   });
@@ -65,8 +65,9 @@ function CardMakerArabic() {
       </a>
       <div className="container">
         <div className="sidebar">
-          <h4>أختر صورة </h4>
+          <h4>choose an image</h4>
           <div className="imgs">
+            <img src={img1} onClick={() => setImage(img1)}></img>
             <img src={img2} onClick={() => setImage(img2)}></img>
             <img src={img3} onClick={() => setImage(img3)}></img>
             <img src={img4} onClick={() => setImage(img4)}></img>
@@ -75,20 +76,20 @@ function CardMakerArabic() {
           </div>
         </div>
         <div className="main">
-          <h1>كارت المعايدات</h1>
+          <h1>greeting card maker</h1>
 
-          <canvas ref={canvas} width={640} height={425} dir="rtl" />
+          <canvas ref={canvas} width={640} height={425} />
           <textarea
             value={text}
             onChange={(event) => setText(event.target.value)}
           />
           <div className="colorPicker">
+            <label>Change font color: </label>
             <input
               type="color"
               value={color}
               onChange={(event) => setColor(event.target.value)}
             />
-            <label> : اختر الللون </label>
           </div>
         </div>
       </div>
@@ -96,4 +97,4 @@ function CardMakerArabic() {
   );
 }
 
-export default CardMakerArabic;
+export default App;
