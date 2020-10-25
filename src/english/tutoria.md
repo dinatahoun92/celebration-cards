@@ -178,7 +178,7 @@ textarea {
 
 ## Step 4 - Canvas API to draw image:
 
-1. Back in App.js file. We will creatث `Ref` in Canvas tag to access the DOM node. We will call it `canvas`.
+1. Back in App.js file. We will create `Ref` in Canvas tag to access the DOM node. We will call it `canvas`.
 ```
 const canvas = useRef(null);
 ```
