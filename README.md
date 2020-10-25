@@ -12,4 +12,4 @@ English : [link](https://github.com/dinatahoun92/celebration-cards/blob/main/src
 Arabic: [link](https://github.com/dinatahoun92/celebration-cards/blob/main/src/arabic/tutoria.md).
 
 ## License:
-The source code and the tutorials are licensed under the MIT license, which you can find in the MIT-LICENSE.txt file.
+The source code and the tutorials are licensed under the MIT license, which you can find in the LICENSE.txt file.
