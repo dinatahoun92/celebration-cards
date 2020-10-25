@@ -209,7 +209,9 @@ textarea {
 ```
 </div>
 
-انا مستخدمة   [خطوط جوجل](https://fonts.google.com/) لكي يتم استدعائها  قم بوضع الكود الأتي في ملف  `public/index.html`.
+لقد قمت باستخدام
+[خطوط جوجل](https://fonts.google.com/) 
+لكي يتم استدعائها  قم بوضع الكود الأتي في ملف  `public/index.html`.
 
 
 <div dir="ltr">
@@ -552,9 +554,14 @@ canvas.current.toDataURL()
  `""` 
  لأننا لا نريد ان يكون له قيمه قبل ما يتم رسم ال 
  Canvas.
+
+<div dir="ltr">
+
 ```
 const [downloadLink, setDownload] = useState("");
 ```
+
+</div>
 3. في دالة 
 `img.onload`
 ستغير قيمه متغير الدالة
