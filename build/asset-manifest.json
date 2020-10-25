@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.2179db33.chunk.css",
-    "main.js": "/static/js/main.d7c3327a.chunk.js",
-    "main.js.map": "/static/js/main.d7c3327a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
-    "static/js/2.214e9523.chunk.js": "/static/js/2.214e9523.chunk.js",
-    "static/js/2.214e9523.chunk.js.map": "/static/js/2.214e9523.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.0915b2a21e805ca1853b0c0b4bcfccb8.js": "/precache-manifest.0915b2a21e805ca1853b0c0b4bcfccb8.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.2179db33.chunk.css.map": "/static/css/main.2179db33.chunk.css.map",
-    "static/js/2.214e9523.chunk.js.LICENSE.txt": "/static/js/2.214e9523.chunk.js.LICENSE.txt",
-    "static/media/0.jpeg": "/static/media/0.599ca5ba.jpeg",
-    "static/media/1.jpg": "/static/media/1.ad0b3661.jpg",
-    "static/media/2.jpg": "/static/media/2.10c8c713.jpg",
-    "static/media/3.jpg": "/static/media/3.08880df2.jpg",
-    "static/media/5.jpeg": "/static/media/5.2bb3febc.jpeg",
-    "static/media/6.webp": "/static/media/6.0e88b11a.webp",
-    "static/media/download.png": "/static/media/download.d1f4d5de.png"
+    "main.css": "/celebration-cards/static/css/main.c600df38.chunk.css",
+    "main.js": "/celebration-cards/static/js/main.4e033fd1.chunk.js",
+    "main.js.map": "/celebration-cards/static/js/main.4e033fd1.chunk.js.map",
+    "runtime-main.js": "/celebration-cards/static/js/runtime-main.d560c6cf.js",
+    "runtime-main.js.map": "/celebration-cards/static/js/runtime-main.d560c6cf.js.map",
+    "static/js/2.7a1108db.chunk.js": "/celebration-cards/static/js/2.7a1108db.chunk.js",
+    "static/js/2.7a1108db.chunk.js.map": "/celebration-cards/static/js/2.7a1108db.chunk.js.map",
+    "index.html": "/celebration-cards/index.html",
+    "precache-manifest.1465dda16cb333fb70c0e72ff5747134.js": "/celebration-cards/precache-manifest.1465dda16cb333fb70c0e72ff5747134.js",
+    "service-worker.js": "/celebration-cards/service-worker.js",
+    "static/css/main.c600df38.chunk.css.map": "/celebration-cards/static/css/main.c600df38.chunk.css.map",
+    "static/js/2.7a1108db.chunk.js.LICENSE.txt": "/celebration-cards/static/js/2.7a1108db.chunk.js.LICENSE.txt",
+    "static/media/0.jpeg": "/celebration-cards/static/media/0.599ca5ba.jpeg",
+    "static/media/1.jpg": "/celebration-cards/static/media/1.ad0b3661.jpg",
+    "static/media/2.jpg": "/celebration-cards/static/media/2.10c8c713.jpg",
+    "static/media/3.jpg": "/celebration-cards/static/media/3.08880df2.jpg",
+    "static/media/5.jpeg": "/celebration-cards/static/media/5.2bb3febc.jpeg",
+    "static/media/6.webp": "/celebration-cards/static/media/6.0e88b11a.webp",
+    "static/media/download.png": "/celebration-cards/static/media/download.d1f4d5de.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.83c3e0c4.js",
-    "static/js/2.214e9523.chunk.js",
-    "static/css/main.2179db33.chunk.css",
-    "static/js/main.d7c3327a.chunk.js"
+    "static/js/runtime-main.d560c6cf.js",
+    "static/js/2.7a1108db.chunk.js",
+    "static/css/main.c600df38.chunk.css",
+    "static/js/main.4e033fd1.chunk.js"
   ]
 }

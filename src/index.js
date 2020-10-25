@@ -3,24 +3,32 @@ import ReactDOM from "react-dom";
 import CardMakerArabic from "./arabic/cardmaker arabic"; // Needed if you follow the Arabic tutorial
 import CardMakerEnglish from "./english/cardmaker english"; // Needed if you are following the English tutorial
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"; //ignore that you woun't need routing in the tutorial
+import { HashRouter, Route,Switch } from "react-router-dom"; //ignore that you don't need routing in the tutorial
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+     <HashRouter basename={process.env.PUBLIC_URL}>
+     <Route render = {({ location }) => (
+      <Switch location = { location }>
+      <Route path="/en">
+        {/* ignore this line*/}
+        <CardMakerEnglish />
+        {/* you will need it if you are following the English tutorial*/}
+      </Route>
       <Route path="/ar">
         {/* ignore this line*/}
         <CardMakerArabic />
         {/* you will need it if you are following the Arabic tutorial*/}
       </Route>
       {/* ignore this line*/}
-      <Route path="/en">
-        {/* ignore this line*/}
-        <CardMakerEnglish />
-        {/* you will need it if you are following the English tutorial*/}
-      </Route>
+
       {/* ignore this line*/}
-    </Router>
+      </Switch>
+       )} />
+
+      </HashRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

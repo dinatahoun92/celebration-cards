@@ -153,6 +153,7 @@ h1 {
   text-align: center;
   text-transform: capitalize;
   color: #3e424e;
+  font-family: "Lalezar", cursive !important;
 }
 .container {
   display: flex;
