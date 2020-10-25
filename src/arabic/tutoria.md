@@ -1,11 +1,11 @@
 <div dir="rtl">
 
-# تعلم كيف ان تصنع كارت معايدات باستخدام React Hooks و Canvas API :
+#  كيف تصنع كارت معايدات باستخدام React Hooks و Canvas API :
 
 ## نظرة عامة 
 
 في هذا الدرس سنقوم بصنع كارت معايدات. هذا الكارت يمكن المستخدم من الأختيار من صور متعددة و كتابة نص و تغيير لون النص ايضاً.
-
+*يمكنك رؤية و تجربة ما سوف نصنعة من هذا [الرابط](https://dinatahoun92.github.io/celebration-cards/#/ar).*
 ## المواضيع التي سوف نتطرق اليها هي:
 
 - Effect Hook.
@@ -32,12 +32,12 @@
 npx create-react-app greeting-card
 ```
 </div>
-*بيئة العمل هذة سوف تقوم بتثبيت نسخة حديثة من react.js. 
+* بيئة العمل هذة سوف تقوم بتثبيت نسخة حديثة من react.js. 
 جميع حزم ال React.js
   يجب ان تكون
-  **16.8.0**
+  16.8.0
  أو أعلي لكي تدعم أستخدام ال
- **React Hooks**.*
+ React Hooks.
 
 2. سوف نذهب الي ملف 
    greeting-card 
@@ -533,11 +533,11 @@ ctx.fillStyle = color;
 
 ## الخطوة 9 - تفعيل زر التنزيل:
 
-1.  الدالة 
+1. الدالة 
 <span dir="ltr">
 `toDataURL()` 
  </span>
-تقوم بتحويل محتويات ال 
+ تقوم بتحويل محتويات ال 
 canvas
 الي
 encoded URL
@@ -550,7 +550,7 @@ canvas.current.toDataURL()
 ```
 </div>
 
-2.سنقوم بأنشاء متغير حالة اسمه  `downloadLink` 
+2. سنقوم بأنشاء متغير حالة اسمه  `downloadLink` 
 بقيمة مبدئيه تساوي
  `""` 
  لأننا لا نريد ان يكون له قيمه قبل ما يتم رسم ال 
@@ -563,6 +563,7 @@ const [downloadLink, setDownload] = useState("");
 ```
 
 </div>
+
 3. في دالة 
 `img.onload`
 ستغير قيمه متغير الدالة
@@ -579,7 +580,7 @@ setDownload(canvas.current.toDataURL());
 ```
 </div>
 
- 1. لكي نجعل زار التنزيل فعال سنقوم بوضع `download` attribute
+4. لكي نجعل زار التنزيل فعال سنقوم بوضع `download` attribute
 و تساوي  قيمة
  `href` attribute 
  بقيمة متغير الحالة
@@ -593,7 +594,7 @@ setDownload(canvas.current.toDataURL());
 
 </div>
 
-## أخيرا الكود في صفحة App.js يجب ان يكون مثل الآتي:
+## اخيرا الكود في صفحة App.js يجب ان يكون مثل الآتي:
 
 <div dir="ltr">
 
@@ -701,4 +702,13 @@ export default App;
 
 ```
 </div>
+
+## ماذا بعد؟
+يمكنك تنزيل الكود من خلال هذا [الرابط](https://github.com/dinatahoun92/celebration-cards/tree/arabic).
+
+## الرخصة:
+
+يقع الكود المستخدم و هذا الدرس التعليمي تحت رخصة MIT license
+و سوف تجدها في ملف LICENSE.txt.
+
 </div>
