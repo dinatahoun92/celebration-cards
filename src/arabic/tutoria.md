@@ -288,11 +288,9 @@ img.onload = function () {
 <div dir="ltr">
 
 ```
-
 ctx.fillText(أهلاٌ بالعالم", 100, 200");
-
- ```
- </div>
+```
+</div>
  ستلاحظ ان النص لايظهر, هذا بسبب ان النص يتم رسمه قبل انتظار الأنتهاء من رسم الصورة. لكي نحل هذه المشكله سنقول بوضعه داخل دالة `img.onload`.
 
 2. تنسيق النص : 
@@ -308,7 +306,8 @@ ctx.fillText(أهلاٌ بالعالم", 100, 200");
 ctx.font = "40px Lalezar";
 ```
 </div>
-  - سوف نقوم بتغيير لون النص الي `"#f2ceaf"` بأستخدام `ctx.fillStyle`.
+
+   - سوف نقوم بتغيير لون النص الي `"#f2ceaf"` بأستخدام `ctx.fillStyle`.
 
 <div dir="ltr">
 
@@ -317,9 +316,20 @@ ctx.fillStyle = "#f2ceaf";
 ```
 </div>
 
+- ستلاحظ ان الكلام يبدا من اقصي اليسار و يختفي فلحل هذة المشكله سنقوم بأستخدام
+`ctx.textAlign`
+لجعل المحازاه تبدا من اليسار الي اليمين.
+
+<div dir="ltr">
+```
+ctx.textAlign = "left";
+```
+
+</div>
+
 *ملحوظة:يجب وضع اي تنسيق قبل `ctx.fillText` لان النص عندما يرسم يرسم بناء على التنسيقات السابقه و لا يمكن تغيرها.*
 
-3. إذا قمت بتغير النص بنص طويل ستلاحظ ان النص يخرج من الصوره بدل ما ينزل في سطر جديد حين الحاجه لكي يبقي بداخل الصورة. هذة مشكله سائعة في Canvas API. لكي نقوم بحل هذه المشكله سنقوم بأستخدام دالة تحسب العرض المطلوب و عمل سطر جديد حين الحاجه. *لقد استخدمت الحل الذي طرحه Colin Wiseman على  [سؤال](https://stackoverflow.com/questions/5026961/html5-canvas-ctx-filltext-wont-do-line-breaks/11361958#11361958) في stackoverflow.*
+1. إذا قمت بتغير النص بنص طويل ستلاحظ ان النص يخرج من الصوره بدل ما ينزل في سطر جديد حين الحاجه لكي يبقي بداخل الصورة. هذة مشكله سائعة في Canvas API. لكي نقوم بحل هذه المشكله سنقوم بأستخدام دالة تحسب العرض المطلوب و عمل سطر جديد حين الحاجه. *لقد استخدمت الحل الذي طرحه Colin Wiseman على  [سؤال](https://stackoverflow.com/questions/5026961/html5-canvas-ctx-filltext-wont-do-line-breaks/11361958#11361958) في stackoverflow.*
 
 <div dir="ltr">
 
@@ -518,10 +528,18 @@ ctx.fillStyle = color;
 ```
 </div>
 
-## Step 8 - Add functionlity to the download button:
+## الخطوة 9 - تفعيل زر التنزيل:
 
-We want when the user clicks on the download button, be able to save the card as an image. Let's start building that functionlity. 
-1.  We will grab the contents of an HTML5 canvas using the canvas `toDataURL()` function.The data returned from the toDataURL() function is a string that represents an encoded URL containing the grabbed graphical data. 
+1.  الدالة 
+<span dir="ltr">
+`toDataURL()` 
+ </span>
+تقوم بتحويل محتويات ال 
+canvas
+الي
+encoded URL
+تستطيع ان نحوله لصورة يمكن تنزيلها
+ 
 <div dir="ltr">
 
 ```
@@ -529,15 +547,45 @@ canvas.current.toDataURL()
 ```
 </div>
 
-1. We will save it in `downloadLink` state variable with intial value of `""` as before canvas renders we don`t want to save any link.
+2.سنقوم بأنشاء متغير حالة اسمه  `downloadLink` 
+بقيمة مبدئيه تساوي
+ `""` 
+ لأننا لا نريد ان يكون له قيمه قبل ما يتم رسم ال 
+ Canvas.
 ```
 const [downloadLink, setDownload] = useState("");
 ```
-3. To be able to make the download button downloading the image, We will put `download` attribute and set `href` attribute value to `downloadLink` state value.
+3. في دالة 
+`img.onload`
+ستغير قيمه متغير الدالة
+`downloadLink`
+الي
+`canvas.current.toDataURL()`
+بأستخدام 
+`setDownload`.
+
+<div dir="ltr">
+
+```
+setDownload(canvas.current.toDataURL());
+```
+</div>
+
+ 1. لكي نجعل زار التنزيل فعال سنقوم بوضع `download` attribute
+و تساوي  قيمة
+ `href` attribute 
+ بقيمة متغير الحالة
+  `downloadLink` .
+
+<div dir="ltr">
+
 ```
 <a href={downloadLink} download>
 ```
-## Finally, Your App.js code should look like the following:
+
+</div>
+
+## أخيرا الكود في صفحة App.js يجب ان يكون مثل الآتي:
 
 <div dir="ltr">
 
@@ -553,12 +601,11 @@ import img6 from "./imgs/6.webp";
 import download from "./imgs/download.png";
 import "./App.css";
 function App() {
-  const canvas = useRef(null);
+  const [text, setText] = useState("استبدل هذا النص!");
   const [image, setImage] = useState(img0);
-  const [text, setText] = useState("Replace this text!");
   const [color, setColor] = useState("#f2ceaf");
   const [downloadLink, setDownload] = useState("");
-
+  const canvas = useRef(null);
   CanvasRenderingContext2D.prototype.wrapText = function (
     text,
     x,
@@ -595,25 +642,24 @@ function App() {
     img.src = image;
     img.onload = function () {
       ctx.drawImage(img, 0, 0, 600, 600);
-      ctx.font = "40px Yesteryear";
+      ctx.font = "40px Lalezar";
       ctx.fillStyle = color;
-      ctx.wrapText(text, 10, 200, 500, 40);
+      ctx.textAlign = "left";
+      ctx.wrapText(text, 10, 200, 640, 40);
       setDownload(canvas.current.toDataURL());
-
     };
-   
-
   });
+
   return (
-    <div className="home">
+    <div class="home">
       <a href={downloadLink} download>
         <img src={download} className="downloadIcon" />
       </a>
       <div className="container">
         <div className="sidebar">
-          <h4>choose an image</h4>
+          <h4>أختر صورة </h4>
           <div className="imgs">
-          <img src={img1} onClick={() => setImage(img1)}></img>
+            <img src={img1} onClick={() => setImage(img1)}></img>
             <img src={img2} onClick={() => setImage(img2)}></img>
             <img src={img3} onClick={() => setImage(img3)}></img>
             <img src={img4} onClick={() => setImage(img4)}></img>
@@ -622,20 +668,20 @@ function App() {
           </div>
         </div>
         <div className="main">
-          <h1>greeting card maker</h1>
+          <h1>كارت المعايدات</h1>
 
-          <canvas ref={canvas} width={640} height={425} />
+          <canvas ref={canvas} width={640} height={425} dir="rtl" />
           <textarea
             value={text}
             onChange={(event) => setText(event.target.value)}
           />
           <div className="colorPicker">
-            <label>Change font color: </label>
             <input
               type="color"
               value={color}
               onChange={(event) => setColor(event.target.value)}
             />
+            <label> : اختر الللون </label>
           </div>
         </div>
       </div>
@@ -644,6 +690,7 @@ function App() {
 }
 
 export default App;
+
 ```
 </div>
 </div>
