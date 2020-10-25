@@ -1,6 +1,6 @@
 <div dir="rtl">
 
-#  كيف ان تصنع كارت معايدات باستخدام React Hooks و Canvas API :
+#  كيف تصنع كارت معايدات باستخدام React Hooks و Canvas API :
 
 ## نظرة عامة 
 
@@ -594,7 +594,7 @@ setDownload(canvas.current.toDataURL());
 
 </div>
 
-## أخيرا الكود في صفحة App.js يجب ان يكون مثل الآتي:
+## اخيرا الكود في صفحة App.js يجب ان يكون مثل الآتي:
 
 <div dir="ltr">
 
