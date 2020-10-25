@@ -219,13 +219,18 @@ textarea {
 ```
 </div>
 
-## Step 4 - Canvas API to draw image:
+## خطوة 4 - أعداد Canvas API لرسم صورة :
 
-1. Back in App.js file. We will creatث `Ref` in Canvas tag to access the DOM node. We will call it `canvas`.
+1. نرجع لملف `App.js` . سوف نقوم بعمل`Ref` في وسم ال Canvas لكي يمكن التحكم في ال DOM. سوف نطلق عليه اسم `canvas`.
+   
+<div dir="ltr">
+
 ```
 const canvas = useRef(null);
 ```
-Then we will add `ref` object.  React will set its .current property to the corresponding DOM node whenever that node changes.
+</div>
+
+2. سوف نقوم بأضافة  `ref` .  ال React يقوم بجعل `.current` يرتبط بالمقابل اليها في عقد ال DOM و يجعلها تستجيب لأي تغيير.
 
 <div dir="ltr">
 
@@ -234,11 +239,11 @@ Then we will add `ref` object.  React will set its .current property to the corr
 ```
 </div>
 
-2. As we are manipulating DOM directly, we will need to use `useEffect()` because, You cannot perform side-effects directly in the body of the functional component.
+3. بما اننا نقوم بالتلاعب بعقد ال DOM بشكل مباشر, سنحتاج الي ان نستخدم `useEffect()` لان هذا يسبب اثار جانبية فلا يمكن ممارستها بشكل مباشر في العناصر الدالية.
 
-3. The `canvas.current.getContext()` method rendes image into the element`s context.
+4.  `canvas.current.getContext()` سيقوم برسم الصوره داخل ال `canvas` .
 
-4. Create new img element.
+5. سنقوم بعمل عنصر جديد من الimg .
 
 <div dir="ltr">
 
@@ -246,7 +251,9 @@ Then we will add `ref` object.  React will set its .current property to the corr
 let img = new Image();
 ```
 </div>
-5. We will use `img.onload` function to wait for our image to be loaded before the backdrop is placed in coordinate (0,0) and whose width and height are 600px and 600px.
+5. سنستخدم دالة `img.onload` لكي تنتظر ان تقوم الصورة بانتهاء من تنزيلها قبل ان توضع في الأحداثيات (0,0) 
+و عرضها يساوي 600px و طولها يساوي أيضاً 600px.
+
 
 <div dir="ltr">
 
@@ -257,7 +264,7 @@ img.onload = function () {
 ```
 </div>
 
- **Here is the whole code of drawing an image with Canvas API:**
+ **الآتي الكود الكامل لرسم صورة عن طريق Canvas API :**
 
 <div dir="ltr">
 
