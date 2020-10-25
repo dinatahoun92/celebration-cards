@@ -8,7 +8,7 @@ import img5 from "./imgs/5.jpeg";
 import img6 from "./imgs/6.webp";
 import download from "./imgs/download.png";
 import "./App.css";
-function CardMakerArabic() {
+function App() {
   const [text, setText] = useState("استبدل هذا النص!");
   const [image, setImage] = useState(img1);
   const [color, setColor] = useState("#f2ceaf");
@@ -96,4 +96,4 @@ function CardMakerArabic() {
   );
 }
 
-export default CardMakerArabic;
+export default App;
