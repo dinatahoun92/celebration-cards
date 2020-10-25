@@ -32,14 +32,14 @@
 npx create-react-app greeting-card
 ```
 </div>
-*بيئة العمل هذة سوف تقوم بتثبيت نسخة حديثة من react.js. 
+* بيئة العمل هذة سوف تقوم بتثبيت نسخة حديثة من react.js. 
 جميع حزم ال React.js
   يجب ان تكون
-  **16.8.0**
+  16.8.0
  أو أعلي لكي تدعم أستخدام ال
- **React Hooks**.*
+ React Hooks.
 
-2. سوف نذهب الي ملف 
+1. سوف نذهب الي ملف 
    greeting-card 
 الذي تم انشاؤة عن طريق الأمر الأتي:
 <div dir="ltr">
@@ -533,11 +533,11 @@ ctx.fillStyle = color;
 
 ## الخطوة 9 - تفعيل زر التنزيل:
 
-1.  الدالة 
+1. الدالة 
 <span dir="ltr">
 `toDataURL()` 
  </span>
-تقوم بتحويل محتويات ال 
+ تقوم بتحويل محتويات ال 
 canvas
 الي
 encoded URL
@@ -579,7 +579,7 @@ setDownload(canvas.current.toDataURL());
 ```
 </div>
 
- 1. لكي نجعل زار التنزيل فعال سنقوم بوضع `download` attribute
+4. لكي نجعل زار التنزيل فعال سنقوم بوضع `download` attribute
 و تساوي  قيمة
  `href` attribute 
  بقيمة متغير الحالة
