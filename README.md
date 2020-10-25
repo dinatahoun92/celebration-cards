@@ -39,7 +39,7 @@ npx create-react-app greeting-card
  أو أعلي لكي تدعم أستخدام ال
  React Hooks.
 
-1. سوف نذهب الي ملف 
+2. سوف نذهب الي ملف 
    greeting-card 
 الذي تم انشاؤة عن طريق الأمر الأتي:
 <div dir="ltr">
@@ -550,7 +550,7 @@ canvas.current.toDataURL()
 ```
 </div>
 
-2.سنقوم بأنشاء متغير حالة اسمه  `downloadLink` 
+2. سنقوم بأنشاء متغير حالة اسمه  `downloadLink` 
 بقيمة مبدئيه تساوي
  `""` 
  لأننا لا نريد ان يكون له قيمه قبل ما يتم رسم ال 
@@ -563,6 +563,7 @@ const [downloadLink, setDownload] = useState("");
 ```
 
 </div>
+
 3. في دالة 
 `img.onload`
 ستغير قيمه متغير الدالة
