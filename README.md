@@ -1,6 +1,6 @@
 <div dir="rtl">
 
-# تعلم كيف ان تصنع كارت معايدات باستخدام React Hooks و Canvas API :
+#  كيف ان تصنع كارت معايدات باستخدام React Hooks و Canvas API :
 
 ## نظرة عامة 
 
@@ -701,4 +701,11 @@ export default App;
 
 ```
 </div>
+
+
+## الرخصة:
+
+يقع الكود المستخدم و هذا الدرس التعليمي تحت رخصة MIT license
+و سوف تجدها في ملف LICENSE.txt.
+
 </div>
