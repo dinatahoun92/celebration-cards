@@ -382,10 +382,21 @@ ctx.wrapText(" أهلاً بالعالم"
 ```
 </div>
 
-## Step 6 - Update Image:
+## خطوة 6 - تحديث الصورة:
 
-Let’s add the functionality to Make user able to change the card's image when he clicks on any image from the left side images.
-We will declare a **state variable** called `image`, and set it to `img0`. React will remember its current value between re-renders, and provide the most recent one to our function. If we want to update the current `image`, we can call `setImage`.
+هذا الجزء سوف نقوم بجعل المستخم قادرا على تغيير صوره كارت المعايدات.
+1. سنقوم بأنشاء ** متغير حالة 
+(state)**
+سنطلق عليه أسم 
+`image`, 
+و تساوي قيمته ب
+`img0`.
+ال
+React 
+سيقوم بتذكر قيمته و الأمداد باحدث قيمة. إذا اردنا انا نغير قيمة
+`image`, 
+سنقوم بنداء الدالة
+`setImage`.
 
 <div dir="ltr">
 
@@ -394,7 +405,10 @@ const [image, setImage] = useState(img0);
 ```
 </div>
 
-So, We will remove the static `img0` and replace it with `image` state variable. Like the following:
+2. سنقوم بحذف القيمة الثابته
+`img0` 
+و أستبدالها بالقيمة المتغيرة
+`image` :
 
 <div dir="ltr">
 
@@ -403,7 +417,10 @@ img.src = image;
 ```
 </div>
 
-Then, we will add a click event listner that triggers `setImage` to change card's image `onClick`.
+3.سنقوم بتحفيز معالجه حدث الضغط
+`onClick`
+ لتغيير الصورة باستدعاء الدالة
+`setImage` .
 
 <div dir="ltr">
 
