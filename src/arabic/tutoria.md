@@ -479,9 +479,14 @@ ctx.wrapText(text, 10, 200, 500, 40);
 ```
 </div>
 
-## Step 7 - Update font color:
+## الخطوة 8 -تحديث لون النص:
 
-1. We will use `useState` to set `color` state variable to `"#f2ceaf"`.
+1. سنقوم بأستخدام
+ `useState` 
+ للنشأ متغير حالة جديد أسمه
+`color` 
+و نجعل قيمته تساوي
+ `"#f2ceaf"`.
 
 <div dir="ltr">
   
@@ -490,7 +495,8 @@ const [color, setColor] = useState("#f2ceaf");
 ```
 </div>
 
-2. We will remove static `"#f2ceaf"` text and replace it with `color` state variable.
+2. سنقوم بأستبدال القيمة الثابته `"#f2ceaf"` 
+بمتغير الحالة `color`.
    
 <div dir="ltr">
 
@@ -499,7 +505,11 @@ ctx.fillStyle = color;
 ```
 </div>
    
-3. We will call `setColor` when the user types on the `input`. So, We will triger it `OnChange` event.
+3. عندما يقوم المستخدم بتغيير اللون هذا سيحفز حالة 
+`OnChange` 
+التي بدورها هتحفز الدالة
+`setColor`
+.
   
 <div dir="ltr">
 
