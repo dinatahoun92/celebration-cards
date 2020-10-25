@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/celebration-cards/static/css/main.c600df38.chunk.css",
+    "main.css": "/celebration-cards/static/css/main.f1c25cc1.chunk.css",
     "main.js": "/celebration-cards/static/js/main.4e033fd1.chunk.js",
     "main.js.map": "/celebration-cards/static/js/main.4e033fd1.chunk.js.map",
     "runtime-main.js": "/celebration-cards/static/js/runtime-main.d560c6cf.js",
@@ -8,9 +8,9 @@
     "static/js/2.7a1108db.chunk.js": "/celebration-cards/static/js/2.7a1108db.chunk.js",
     "static/js/2.7a1108db.chunk.js.map": "/celebration-cards/static/js/2.7a1108db.chunk.js.map",
     "index.html": "/celebration-cards/index.html",
-    "precache-manifest.1465dda16cb333fb70c0e72ff5747134.js": "/celebration-cards/precache-manifest.1465dda16cb333fb70c0e72ff5747134.js",
+    "precache-manifest.d13fd0ac356dd18f22ba33aa0a80caa8.js": "/celebration-cards/precache-manifest.d13fd0ac356dd18f22ba33aa0a80caa8.js",
     "service-worker.js": "/celebration-cards/service-worker.js",
-    "static/css/main.c600df38.chunk.css.map": "/celebration-cards/static/css/main.c600df38.chunk.css.map",
+    "static/css/main.f1c25cc1.chunk.css.map": "/celebration-cards/static/css/main.f1c25cc1.chunk.css.map",
     "static/js/2.7a1108db.chunk.js.LICENSE.txt": "/celebration-cards/static/js/2.7a1108db.chunk.js.LICENSE.txt",
     "static/media/0.jpeg": "/celebration-cards/static/media/0.599ca5ba.jpeg",
     "static/media/1.jpg": "/celebration-cards/static/media/1.ad0b3661.jpg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.d560c6cf.js",
     "static/js/2.7a1108db.chunk.js",
-    "static/css/main.c600df38.chunk.css",
+    "static/css/main.f1c25cc1.chunk.css",
     "static/js/main.4e033fd1.chunk.js"
   ]
 }
