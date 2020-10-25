@@ -148,6 +148,7 @@ textarea {
   width: 640px;
   height: 100px;
   margin-top: 30px;
+  text-align: left;
 }
 .colorPicker {
   margin-top: 30px;
