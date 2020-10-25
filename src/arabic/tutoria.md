@@ -251,7 +251,7 @@ const canvas = useRef(null);
 let img = new Image();
 ```
 </div>
-5. سنستخدم دالة `img.onload` لكي تنتظر ان تقوم الصورة بانتهاء من تنزيلها قبل ان توضع في الأحداثيات (0,0) 
+6. سنستخدم دالة `img.onload` لكي تنتظر ان تقوم الصورة بانتهاء من تنزيلها قبل ان توضع في الأحداثيات (0,0) 
 و عرضها يساوي 600px و طولها يساوي أيضاً 600px.
 
 
@@ -281,25 +281,34 @@ img.onload = function () {
 
 </div>
 
-## Step 5 - Canvas API to draw text :
+## خطوة 5 - أعداد Canvas API لرسم نص :
 
-1. We will use `fillText()` method to draw the text "Hello world," starting at the coordinates (100, 200) inside `useEffect` as we are still manipulating the DOM.
-   
- ```
-ctx.fillText('Hello world', 100, 200);
- ```
-*You will notice that the text didn't render, that is because we are rendering the text without waiting for the image to be drawn first. To solve that we will put it inside `img.onload` function.*
+1. سنقوم بأستخدام دالة `fillText()` method لكي نرسم نص "أهلاٌ بالعالم" عند أحداثيات (100, 200) داخل دالة `useEffect` لأننا مازلنا نتلاعب بال DOM و نسبب آثار جانبية.
 
-2. We will style our text. 
-  - We will use `ctx.font` to set font to **40px** and font family to **Yesteryear**.
-  - 
 <div dir="ltr">
 
 ```
-ctx.font = "40px Yesteryear";
+
+ctx.fillText(أهلاٌ بالعالم", 100, 200");
+
+ ```
+ </div>
+ ستلاحظ ان النص لايظهر, هذا بسبب ان النص يتم رسمه قبل انتظار الأنتهاء من رسم الصورة. لكي نحل هذه المشكله سنقول بوضعه داخل دالة `img.onload`.
+
+2. تنسيق النص : 
+  - سنستخدم دالة `ctx.font`  لكي تجعل
+  حجم النص 
+   **40px** 
+   و نوعة
+    **Lalezar**.
+   
+<div dir="ltr">
+
+```
+ctx.font = "40px Lalezar";
 ```
 </div>
-  - We will change font color to `"#f2ceaf"` using `ctx.fillStyle`.
+  - سوف نقوم بتغيير لون النص الي `"#f2ceaf"` بأستخدام `ctx.fillStyle`.
 
 <div dir="ltr">
 
@@ -308,9 +317,9 @@ ctx.fillStyle = "#f2ceaf";
 ```
 </div>
 
-*Note: Any styling we do we must put it before `ctx.fillText` because the text gets drawn based on it's previous styles.*
+*ملحوظة:يجب وضع اي تنسيق قبل `ctx.fillText` لان النص عندما يرسم يرسم بناء على التنسيقات السابقه و لا يمكن تغيرها.*
 
-3- If you replace 'Hello world' with long sentense, you will notice that the text is overflowing instead of wrapping. This is a problem with Canvas API. To work arround this we will make a function that takes the text calculate it's width and breaks into a new line when needed. *The following code is inspired by Colin Wiseman answer on this stackoverflow [question](https://stackoverflow.com/questions/5026961/html5-canvas-ctx-filltext-wont-do-line-breaks/11361958#11361958).*
+3. إذا قمت بتغير النص بنص طويل ستلاحظ ان النص يخرج من الصوره بدل ما ينزل في سطر جديد حين الحاجه لكي يبقي بداخل الصورة. هذة مشكله سائعة في Canvas API. لكي نقوم بحل هذه المشكله سنقوم بأستخدام دالة تحسب العرض المطلوب و عمل سطر جديد حين الحاجه. *لقد استخدمت الحل الذي طرحه Colin Wiseman على  [سؤال](https://stackoverflow.com/questions/5026961/html5-canvas-ctx-filltext-wont-do-line-breaks/11361958#11361958) في stackoverflow.*
 
 <div dir="ltr">
 
@@ -348,24 +357,28 @@ CanvasRenderingContext2D.prototype.wrapText = function (
   ```
 </div>
 
-- `CanvasRenderingContext2D` provides the 2D rendering context for the drawing surface of a canvas element. It takes **text, x&Y coordinates, maximum width of each sentence , and line length**.
+- `CanvasRenderingContext2D`  توفر أطار ثنائي الأبعاد لرسم عناصر ال 
+  canvas. تاخد 
+  **النص و الأحداثيات و العرض و طول الحروف**.
   
-- We will remove the following line:
+- سوف نحذف الكود الآتي:
   
 <div dir="ltr">
 
 ```
-ctx.fillText('Hello world', 100, 200);
+ctx.fillText("أهلاٌ بالعالم"
+, 100, 200);
 ```
 </div>
-*As it is used on the above function*
+*لأنها جزء من الداله السابقة*
 
-- We replace it with:
+- سنستبتدلها بالكود الآتي:
   
 <div dir="ltr">
 
 ```
-ctx.wrapText("Hello world", 10, 200, 500, 40);
+ctx.wrapText(" أهلاً بالعالم"
+, 10, 200, 500, 40);
 ```
 </div>
 
