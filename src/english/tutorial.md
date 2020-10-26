@@ -1,8 +1,8 @@
-# How to build a greeting card maker with React Hooks & Canvas API
+# How to build a celebration card maker with React Hooks & Canvas API
 
 ## Overview 
 
-In this tutorial, we will be creating a greeting card maker. It will enable users to choose from many images and text colors. The user will be able to write a greeting phrase. The key things we will explore is how to:
+In this tutorial, we will be creating a celebration card maker. It will enable users to choose from many images and text colors. The user will be able to write a greeting phrase.You can try what we are going to build from this [link](https://dinatahoun92.github.io/celebration-cards/#/en). The key things we will explore is how to:
 
 - Rendering elements.
 - Using Effect Hook.
